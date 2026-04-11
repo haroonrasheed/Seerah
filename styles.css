@@ -359,6 +359,45 @@ h1 {
   stroke-dasharray: 0.1 12;
 }
 
+.journey-guide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 92px;
+  height: 92px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-9999px, -9999px);
+  transition: transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 220ms ease;
+  filter: drop-shadow(0 8px 14px rgba(36, 71, 107, 0.32));
+}
+
+.journey-guide::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 3px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(40, 61, 84, 0.24);
+  z-index: -1;
+}
+
+.journey-guide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  image-rendering: auto;
+}
+
+.journey-guide.is-visible {
+  opacity: 1;
+  animation: guide-float 1.8s ease-in-out infinite;
+}
+
 .timeline-list {
   position: relative;
   z-index: 1;
@@ -421,6 +460,12 @@ h1 {
   font-family: "Nunito", sans-serif;
   font-size: 1.2rem;
   line-height: 1;
+}
+
+.node-order-label {
+  color: #2a6fb8;
+  font-weight: 700;
+  margin-right: 0.22rem;
 }
 
 .node-year {
@@ -979,6 +1024,16 @@ h1 {
   }
 }
 
+@keyframes guide-float {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -2px;
+  }
+}
+
 .map-note {
   margin: 0.64rem 0 0;
   color: #3b5678;
@@ -1195,14 +1250,67 @@ html[dir="rtl"] .map-controls {
 }
 
 @media (max-width: 760px) {
+  .hero {
+    padding: 1rem 0.8rem 0.6rem;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 8vw, 2.3rem);
+    line-height: 1.08;
+  }
+
+  .subtitle {
+    margin-top: 0.35rem;
+    margin-bottom: 0.55rem;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .lang-switch {
+    margin-bottom: 0.6rem;
+  }
+
   .notice-grid {
     grid-template-columns: 1fr;
   }
 
+  .view-tabs,
+  .filter-wrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+  }
+
+  .view-tabs::-webkit-scrollbar,
+  .filter-wrap::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .view-tabs::-webkit-scrollbar-thumb,
+  .filter-wrap::-webkit-scrollbar-thumb {
+    background: rgba(101, 145, 188, 0.45);
+    border-radius: 999px;
+  }
+
+  .view-btn,
+  .filter-btn,
+  .prophet-filter-btn {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
   .story-node {
     min-height: 146px;
-    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-columns: 54px minmax(0, 1fr);
     gap: 0.55rem;
+  }
+
+  .journey-guide {
+    width: 74px;
+    height: 74px;
   }
 
   .story-node .mid-lane {
@@ -1216,10 +1324,10 @@ html[dir="rtl"] .map-controls {
   }
 
   .story-point {
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
+    transform: translate(calc(-50% + var(--shift, 0px)), -50%);
+    width: 44px;
+    height: 44px;
+    font-size: 1.08rem;
   }
 
   .connector,
@@ -1238,6 +1346,10 @@ html[dir="rtl"] .map-controls {
     font-size: 1.06rem;
   }
 
+  .node-order-label {
+    font-size: 0.94em;
+  }
+
   .node-clipart {
     width: 76px;
     height: 60px;
@@ -1252,8 +1364,8 @@ html[dir="rtl"] .map-controls {
   }
 
   .view-tabs {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
   }
 
   .culture-card img {
@@ -1266,10 +1378,13 @@ html[dir="rtl"] .map-controls {
   }
 
   #routePathBg,
+  #prophetsRoutePathBg {
+    stroke-width: 16;
+  }
+
   #routePathDots,
-  #prophetsRoutePathBg,
   #prophetsRoutePathDots {
-    stroke-width: 0;
+    stroke-width: 3.2;
   }
 
   .map-caption {
@@ -1297,25 +1412,27 @@ html[dir="rtl"] .map-controls {
   }
 
   .scroll-top-btn {
-    top: 10px;
-    right: 10px;
-    width: 52px;
-    height: 52px;
+    top: auto;
+    right: 12px;
+    bottom: 14px;
+    width: 56px;
+    height: 56px;
     border-radius: 999px;
+    z-index: 1400;
   }
 
   .scroll-top-btn::before {
-    top: 19px;
-    width: 7px;
-    height: 20px;
+    top: 20px;
+    width: 8px;
+    height: 21px;
   }
 
   .scroll-top-btn::after {
     top: 13px;
-    width: 14px;
-    height: 14px;
-    border-top-width: 7px;
-    border-left-width: 7px;
+    width: 16px;
+    height: 16px;
+    border-top-width: 8px;
+    border-left-width: 8px;
   }
 }
 

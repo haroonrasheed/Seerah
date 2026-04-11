@@ -998,6 +998,7 @@ const PHASE_CLIPARTS = {
 };
 
 const DEFAULT_CLIPART = "./default-seerah.svg";
+const JOURNEY_GUIDE_ICON = "./journey-guide-character.png";
 
 const PHASE_LABELS_UR = {
   early: "ابتدائی زندگی",
@@ -1574,6 +1575,7 @@ const prophetsTimelineEl = document.getElementById("prophetsTimeline");
 const dialogSourcesHeadingEl = document.getElementById("dialogSourcesHeading");
 const sourcesSummaryEl = document.getElementById("sourcesSummary");
 const footerTextEl = document.getElementById("footerText");
+const timelineCanvasEl = document.querySelector("#timelinePane .timeline-canvas");
 
 const mapEl = document.getElementById("map");
 let mapSvg = null;
@@ -1624,6 +1626,7 @@ const pointById = new Map();
 const mapPointById = new Map();
 const prophetNodeById = new Map();
 const prophetPointById = new Map();
+const routePointByEventId = new Map();
 
 let activeFilter = "all";
 let activeProphetFilter = "all-anbiya";
@@ -1635,6 +1638,7 @@ let mapProgressOrder = null;
 let mapFocusedEventIds = null;
 let scrollSyncRaf = 0;
 let currentLang = localStorage.getItem("seerah-lang") === "ur" ? "ur" : "en";
+let journeyGuideEl = null;
 
 bindUI();
 applyLanguage(true);
@@ -1799,6 +1803,7 @@ function setActiveView(view, options = {}) {
       }
     });
   } else {
+    hideJourneyGuide();
     if (dialogEl?.open) dialogEl.close();
     hideMapPopup();
     renderProphetsTimeline();
@@ -2135,6 +2140,8 @@ function createMapEventPoint(event) {
 
 function renderTimeline() {
   const visibleEvents = getVisibleEvents();
+  const isMobileViewport = window.matchMedia("(max-width: 760px)").matches;
+  const mobileShift = 16;
   timelineEl.innerHTML = "";
   nodeById.clear();
   pointById.clear();
@@ -2142,7 +2149,8 @@ function renderTimeline() {
   visibleEvents.forEach((event, visibleIndex) => {
     const localized = getLocalizedEvent(event);
     const side = visibleIndex % 2 === 0 ? "left" : "right";
-    const shift = side === "left" ? -42 : 42;
+    const shiftAmount = isMobileViewport ? mobileShift : 42;
+    const shift = side === "left" ? -shiftAmount : shiftAmount;
     const phaseLabel = getPhaseLabel(event.phase);
     const clipart = getClipartForEvent(event);
 
@@ -2155,7 +2163,9 @@ function renderTimeline() {
       localized.title
     )}">
         <div class="node-head">
-          <h3 class="node-title">${escapeHtml(localized.cardTitle || localized.title)}</h3>
+          <h3 class="node-title"><span class="node-order-label">${event.order}.</span> ${escapeHtml(
+      localized.cardTitle || localized.title
+    )}</h3>
           <span class="node-year">${escapeHtml(localized.yearDisplay)}</span>
         </div>
         <div class="node-visual-row">
@@ -2209,7 +2219,11 @@ function renderTimeline() {
 
 function drawRoutePath() {
   const visibleEvents = getVisibleEvents();
-  if (!visibleEvents.length || !routeSvg || !routePathBg || !routePathDots) return;
+  routePointByEventId.clear();
+  if (!visibleEvents.length || !routeSvg || !routePathBg || !routePathDots) {
+    hideJourneyGuide();
+    return;
+  }
 
   const timelineRect = timelineEl.getBoundingClientRect();
   const svgRect = routeSvg.getBoundingClientRect();
@@ -2229,7 +2243,16 @@ function drawRoutePath() {
       };
     });
 
-  if (!points.length) return;
+  if (!points.length) {
+    hideJourneyGuide();
+    return;
+  }
+
+  visibleEvents.forEach((event, index) => {
+    const point = points[index];
+    if (!point) return;
+    routePointByEventId.set(event.id, point);
+  });
 
   let path = `M ${points[0].x.toFixed(1)} ${points[0].y.toFixed(1)}`;
   for (let i = 1; i < points.length; i += 1) {
@@ -2241,6 +2264,7 @@ function drawRoutePath() {
 
   routePathBg.setAttribute("d", path);
   routePathDots.setAttribute("d", path);
+  updateJourneyGuidePosition(activeEventId);
 }
 
 function queueTimelineScrollSync(force = false) {
@@ -2436,6 +2460,45 @@ function setActiveEvent(eventId, options = {}) {
       pulseMapPoint(mapPoint.group);
     }
   }
+
+  updateJourneyGuidePosition(event.id);
+}
+
+function ensureJourneyGuide() {
+  if (journeyGuideEl || !timelineCanvasEl) return;
+  const guide = document.createElement("div");
+  guide.className = "journey-guide";
+  guide.setAttribute("aria-hidden", "true");
+  guide.innerHTML = `<img src="${encodeURI(JOURNEY_GUIDE_ICON)}" alt="">`;
+  timelineCanvasEl.appendChild(guide);
+  journeyGuideEl = guide;
+}
+
+function hideJourneyGuide() {
+  if (!journeyGuideEl) return;
+  journeyGuideEl.classList.remove("is-visible");
+}
+
+function updateJourneyGuidePosition(eventId = activeEventId) {
+  if (activeView !== "seerah") {
+    hideJourneyGuide();
+    return;
+  }
+  ensureJourneyGuide();
+  if (!journeyGuideEl) return;
+
+  let targetId = eventId;
+  if (!targetId || !routePointByEventId.has(targetId)) {
+    targetId = getVisibleEvents()[0]?.id || null;
+  }
+  if (!targetId || !routePointByEventId.has(targetId)) {
+    hideJourneyGuide();
+    return;
+  }
+
+  const point = routePointByEventId.get(targetId);
+  journeyGuideEl.style.transform = `translate(${point.x.toFixed(1)}px, ${point.y.toFixed(1)}px) translate(-50%, -100%)`;
+  journeyGuideEl.classList.add("is-visible");
 }
 
 function updateMapVisibility(options = {}) {
@@ -3194,6 +3257,7 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
+
 
 
 
