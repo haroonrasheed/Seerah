@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">Arabesque Geometric Pattern</title>
+  <rect width="160" height="160" fill="none"/>
+  <g fill="none" stroke="#c79b5f" stroke-width="2.2" opacity="0.34">
+    <circle cx="80" cy="80" r="24"/>
+    <circle cx="80" cy="80" r="52"/>
+    <path d="M80 28 L92 56 L120 68 L92 80 L80 108 L68 80 L40 68 L68 56Z"/>
+    <path d="M80 132 L92 104 L120 92 L92 80 L80 52 L68 80 L40 92 L68 104Z"/>
+  </g>
+  <g fill="none" stroke="#3f6c9d" stroke-width="1.4" opacity="0.22">
+    <path d="M0 80 H160"/>
+    <path d="M80 0 V160"/>
+    <path d="M24 24 L136 136"/>
+    <path d="M136 24 L24 136"/>
+  </g>
+</svg>

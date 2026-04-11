@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Battle Era Clipart</title>
+  <desc id="desc">Kid-friendly historical camp symbols for major Madinah battles.</desc>
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4ecff"/>
+      <stop offset="100%" stop-color="#ffe6d2"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#bg5)"/>
+  <rect y="460" width="960" height="140" fill="#ffd4a6"/>
+  <g transform="translate(170 120)">
+    <path d="M0 300 L160 40 L320 300Z" fill="#f1884a"/>
+    <path d="M320 300 L470 80 L620 300Z" fill="#2c7ad9"/>
+    <rect x="142" y="240" width="36" height="60" fill="#5a2f1f"/>
+    <rect x="452" y="240" width="36" height="60" fill="#5a2f1f"/>
+    <circle cx="160" cy="150" r="28" fill="#ffd566"/>
+    <circle cx="470" cy="170" r="30" fill="#75c99f"/>
+  </g>
+  <g transform="translate(420 180)">
+    <circle cx="60" cy="40" r="42" fill="#f2ca65"/>
+    <path d="M60 10 L70 35 L95 35 L75 50 L83 75 L60 60 L37 75 L45 50 L25 35 L50 35Z" fill="#ffffff"/>
+  </g>
+  <g stroke="#244061" stroke-width="10" stroke-linecap="round">
+    <line x1="110" y1="120" x2="180" y2="50"/>
+    <line x1="180" y1="120" x2="110" y2="50"/>
+    <line x1="790" y1="130" x2="850" y2="70"/>
+    <line x1="850" y1="130" x2="790" y2="70"/>
+  </g>
+</svg>

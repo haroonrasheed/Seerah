@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Hajj and Arafat Clipart</title>
+  <desc id="desc">Kid-friendly mountain and pilgrim tents clipart for the farewell pilgrimage.</desc>
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d3f0ff"/>
+      <stop offset="100%" stop-color="#fff5d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#bg7)"/>
+  <rect y="450" width="960" height="150" fill="#ffd8a6"/>
+  <path d="M170 450 L420 180 L660 450Z" fill="#95bb5a"/>
+  <path d="M390 450 L560 250 L750 450Z" fill="#79a74b"/>
+  <g fill="#ffffff" stroke="#c7dcec" stroke-width="3">
+    <path d="M150 450 L190 390 L230 450Z"/>
+    <path d="M238 450 L278 392 L318 450Z"/>
+    <path d="M326 450 L366 394 L406 450Z"/>
+    <path d="M560 450 L600 392 L640 450Z"/>
+    <path d="M648 450 L688 390 L728 450Z"/>
+  </g>
+  <g transform="translate(586 158)">
+    <circle cx="58" cy="42" r="30" fill="#ffd96f"/>
+    <path d="M58 15 L66 33 L84 33 L70 45 L76 62 L58 52 L40 62 L46 45 L32 33 L50 33Z" fill="#fff"/>
+  </g>
+  <g fill="#2c7ad9" opacity="0.9">
+    <circle cx="125" cy="126" r="8"/>
+    <circle cx="152" cy="110" r="6"/>
+    <circle cx="176" cy="98" r="5"/>
+  </g>
+</svg>

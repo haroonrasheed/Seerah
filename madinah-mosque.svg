@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Madinah Clipart</title>
+  <desc id="desc">Colorful clipart of a mosque with a green dome and minarets.</desc>
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d5f4ff"/>
+      <stop offset="100%" stop-color="#edf8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#sky2)"/>
+  <rect y="435" width="960" height="165" fill="#ffe7be"/>
+  <g fill="#ffffff" opacity="0.9">
+    <ellipse cx="220" cy="130" rx="90" ry="40"/>
+    <ellipse cx="185" cy="150" rx="58" ry="24"/>
+    <ellipse cx="255" cy="154" rx="52" ry="22"/>
+    <ellipse cx="740" cy="112" rx="95" ry="42"/>
+    <ellipse cx="705" cy="136" rx="64" ry="24"/>
+    <ellipse cx="775" cy="138" rx="60" ry="25"/>
+  </g>
+  <g transform="translate(160 170)">
+    <rect x="60" y="170" width="520" height="140" rx="12" fill="#ffffff"/>
+    <rect x="90" y="205" width="460" height="72" rx="10" fill="#eff7ff"/>
+    <path d="M240 170 Q320 70 400 170Z" fill="#2faa7e"/>
+    <ellipse cx="320" cy="170" rx="80" ry="26" fill="#56c89a"/>
+    <rect x="140" y="102" width="40" height="208" rx="10" fill="#ffffff"/>
+    <rect x="460" y="102" width="40" height="208" rx="10" fill="#ffffff"/>
+    <rect x="151" y="80" width="18" height="30" rx="4" fill="#f3ce66"/>
+    <rect x="471" y="80" width="18" height="30" rx="4" fill="#f3ce66"/>
+    <path d="M160 82 L170 58 L180 82Z" fill="#f3ce66"/>
+    <path d="M480 82 L490 58 L500 82Z" fill="#f3ce66"/>
+  </g>
+  <g fill="#67c99f">
+    <circle cx="95" cy="456" r="24"/>
+    <circle cx="138" cy="464" r="18"/>
+    <circle cx="870" cy="448" r="28"/>
+    <circle cx="834" cy="462" r="19"/>
+  </g>
+</svg>

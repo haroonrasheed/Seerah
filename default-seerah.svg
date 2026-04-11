@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Seerah Clipart</title>
+  <desc id="desc">Colorful general timeline clipart with stars and map pin.</desc>
+  <defs>
+    <linearGradient id="bg9" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d7f2ff"/>
+      <stop offset="100%" stop-color="#ffe9d3"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#bg9)"/>
+  <path d="M170 430 C260 280 440 300 515 225 C585 160 685 180 785 110" fill="none" stroke="#2d7cd9" stroke-width="18" stroke-linecap="round" stroke-dasharray="4 28"/>
+  <g transform="translate(375 220)">
+    <path d="M110 0 C50 0 5 45 5 102 C5 180 110 284 110 284 C110 284 215 180 215 102 C215 45 170 0 110 0Z" fill="#ff8f5a"/>
+    <circle cx="110" cy="100" r="44" fill="#ffffff"/>
+    <circle cx="110" cy="100" r="24" fill="#2c7ad9"/>
+  </g>
+  <g fill="#f3c95f">
+    <polygon points="210,110 220,132 242,142 220,152 210,174 200,152 178,142 200,132"/>
+    <polygon points="780,180 789,198 807,206 789,214 780,232 771,214 753,206 771,198"/>
+    <polygon points="690,80 698,96 714,103 698,110 690,126 682,110 666,103 682,96"/>
+  </g>
+</svg>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -7,19 +7,17 @@
   <meta name="description" content="Educational timeline of major life events of Prophet Muhammad (SAWW) with important locations in present-day Saudi Arabia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
     <p id="heroEyebrow" class="eyebrow">Seerah Project Timeline</p>
     <h1 id="heroTitle">Life Timeline of Prophet Muhammad (SAWW)</h1>
-    <p id="heroSubtitle" class="subtitle">
-      Interactive timeline inspired by your sample style: colorful path, numbered points, and click-to-open event details.
-    </p>
+    <p class="subtitle">From darkness to light, the Prophet (ï·º) came to guide people to what is right</p>
     <div class="lang-switch" role="group" aria-label="Language switcher">
       <button class="lang-btn active" data-lang="en" type="button">English</button>
-      <button class="lang-btn" data-lang="ur" type="button">اردو</button>
+      <button class="lang-btn" data-lang="ur" type="button">Ø§Ø±Ø¯Ùˆ</button>
     </div>
     <div id="noticeGrid" class="notice-grid">
       <p id="noticeHowTo"><strong>How to use:</strong> click any numbered point to open full event details.</p>
@@ -30,25 +28,47 @@
 
   <section id="cultureStrip" class="culture-strip" aria-label="Decorative Arabic-inspired cliparts">
     <article class="culture-card">
-      <img src="assets/clipart/desert-majlis.svg" alt="Desert majlis style clipart" loading="lazy">
+      <img src="desert-majlis.svg" alt="Desert majlis style clipart" loading="lazy">
       <p id="cultureCard1">Learning Circle</p>
     </article>
     <article class="culture-card">
-      <img src="assets/clipart/camel-rider.svg" alt="Camel travel clipart" loading="lazy">
+      <img src="camel-rider.svg" alt="Camel travel clipart" loading="lazy">
       <p id="cultureCard2">Desert Journey</p>
     </article>
     <article class="culture-card">
-      <img src="assets/clipart/hira-mountain.svg" alt="Mountain and cave clipart" loading="lazy">
+      <img src="hira-mountain.svg" alt="Mountain and cave clipart" loading="lazy">
       <p id="cultureCard3">Land of Revelation</p>
     </article>
   </section>
 
-  <section id="viewTabs" class="view-tabs" aria-label="Content views">
-    <button class="view-btn active" data-view="seerah" type="button">Prophet Muhammad SAWW</button>
-    <button class="view-btn" data-view="prophets" type="button">All Anbiya</button>
+  <section id="viewTabs" class="view-tabs" aria-label="Content views" role="tablist">
+    <button
+      id="viewTabSeerah"
+      class="view-btn active"
+      data-view="seerah"
+      type="button"
+      role="tab"
+      aria-selected="true"
+      aria-controls="filterWrap"
+      tabindex="0"
+    >
+      Prophet Muhammad SAWW
+    </button>
+    <button
+      id="viewTabProphets"
+      class="view-btn"
+      data-view="prophets"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="prophetsFilterWrap"
+      tabindex="-1"
+    >
+      All Anbiya
+    </button>
   </section>
 
-  <section id="filterWrap" class="filter-wrap" aria-label="Timeline filters">
+  <section id="filterWrap" class="filter-wrap view-panel" aria-label="Timeline filters" role="tabpanel" aria-labelledby="viewTabSeerah">
     <button class="filter-btn active" data-filter="all" type="button">All Events</button>
     <button class="filter-btn" data-filter="early" type="button">Early Life</button>
     <button class="filter-btn" data-filter="revelation" type="button">Revelation</button>
@@ -58,7 +78,14 @@
     <button class="filter-btn" data-filter="final" type="button">Final Years</button>
   </section>
 
-  <section id="prophetsFilterWrap" class="filter-wrap prophets-filter-wrap" aria-label="Anbiya filters" hidden>
+  <section
+    id="prophetsFilterWrap"
+    class="filter-wrap prophets-filter-wrap view-panel"
+    aria-label="Anbiya filters"
+    role="tabpanel"
+    aria-labelledby="viewTabProphets"
+    hidden
+  >
     <button class="prophet-filter-btn active" data-filter="all-anbiya" type="button">All Anbiya</button>
     <button class="prophet-filter-btn" data-filter="bani-israel" type="button">Bani Israel</button>
     <button class="prophet-filter-btn" data-filter="arabia" type="button">Arabia</button>
@@ -67,7 +94,7 @@
 
   <main class="stage">
     <section id="timelinePane" class="timeline-pane" aria-label="Infographic timeline">
-      <h2 id="timelineHeading">Seerah Journey (Click Points)</h2>
+      <h2 id="timelineHeading">Seerah Journey</h2>
       <div class="timeline-canvas">
         <svg id="routeSvg" class="route-svg" aria-hidden="true">
           <path id="routePathBg"></path>
@@ -124,11 +151,15 @@
   </details>
 
   <footer class="footer">
-    <p id="footerText">Built for educational use. Edit timeline data in <code>assets/js/events.js</code>.</p>
+    <p id="footerText">Built for educational use. Edit timeline data in <code>events.js</code>.</p>
   </footer>
 
-  <script src="assets/js/events.js"></script>
-  <script src="assets/js/prophets.js"></script>
-  <script src="assets/js/app.js"></script>
+  <button id="scrollTopBtn" class="scroll-top-btn" type="button" aria-label="Back to top" title="Back to top">&uarr;</button>
+
+  <script src="events.js"></script>
+  <script src="prophets.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
+
+

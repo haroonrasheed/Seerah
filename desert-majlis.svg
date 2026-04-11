@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Desert Majlis Clipart</title>
+  <desc id="desc">Kid-friendly desert scene with people sitting together under palm trees.</desc>
+  <defs>
+    <linearGradient id="bgMajlis" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e5f5ff"/>
+      <stop offset="100%" stop-color="#ffe9ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#bgMajlis)"/>
+  <path d="M0 380 C 180 320, 360 430, 550 378 C 700 334, 820 400, 960 356 L960 600 L0 600Z" fill="#f1c289"/>
+  <path d="M0 456 C 190 416, 390 500, 600 450 C 740 418, 860 470, 960 448 L960 600 L0 600Z" fill="#e7b077"/>
+  <g transform="translate(640 118)">
+    <rect x="84" y="66" width="34" height="182" rx="18" fill="#8d5a38"/>
+    <g fill="#5a9f49">
+      <path d="M102 70 C 40 40, 20 4, 0 0 C 20 36, 54 76, 102 86Z"/>
+      <path d="M102 72 C 170 34, 212 6, 246 0 C 204 42, 158 76, 102 90Z"/>
+      <path d="M102 72 C 66 8, 64 -26, 72 -62 C 88 -24, 102 24, 112 76Z"/>
+    </g>
+  </g>
+  <g transform="translate(136 148)">
+    <rect x="58" y="76" width="26" height="146" rx="12" fill="#9a6441"/>
+    <g fill="#76b85d">
+      <path d="M72 72 C 24 42, 2 18, -20 18 C 8 44, 36 78, 72 86Z"/>
+      <path d="M72 74 C 120 40, 148 16, 176 12 C 148 44, 120 72, 72 86Z"/>
+      <path d="M72 74 C 58 20, 56 -12, 64 -42 C 74 -10, 84 26, 90 76Z"/>
+    </g>
+  </g>
+  <g transform="translate(236 332)">
+    <ellipse cx="250" cy="188" rx="220" ry="52" fill="#d69b64" opacity="0.45"/>
+    <g>
+      <circle cx="120" cy="92" r="24" fill="#f2c08b"/>
+      <rect x="88" y="114" width="66" height="84" rx="18" fill="#f5efe4"/>
+      <rect x="84" y="116" width="74" height="30" rx="12" fill="#d4c8b5"/>
+      <rect x="98" y="190" width="20" height="54" rx="8" fill="#f5efe4"/>
+      <rect x="124" y="190" width="20" height="54" rx="8" fill="#f5efe4"/>
+    </g>
+    <g>
+      <circle cx="258" cy="100" r="24" fill="#f0bb84"/>
+      <rect x="220" y="122" width="78" height="82" rx="20" fill="#7a5d86"/>
+      <rect x="218" y="124" width="82" height="28" rx="12" fill="#8e7399"/>
+      <rect x="230" y="194" width="22" height="54" rx="9" fill="#7a5d86"/>
+      <rect x="266" y="194" width="22" height="54" rx="9" fill="#7a5d86"/>
+    </g>
+    <g>
+      <circle cx="392" cy="96" r="24" fill="#efb983"/>
+      <rect x="352" y="118" width="84" height="86" rx="22" fill="#6f6e94"/>
+      <rect x="352" y="120" width="84" height="30" rx="12" fill="#8483ac"/>
+      <rect x="368" y="194" width="22" height="54" rx="9" fill="#6f6e94"/>
+      <rect x="400" y="194" width="22" height="54" rx="9" fill="#6f6e94"/>
+    </g>
+  </g>
+</svg>

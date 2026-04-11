@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Hira Mountain Clipart</title>
+  <desc id="desc">Colorful mountain and cave clipart representing the first revelation context.</desc>
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbe9ff"/>
+      <stop offset="100%" stop-color="#fef4df"/>
+    </linearGradient>
+    <linearGradient id="mountain1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d79460"/>
+      <stop offset="100%" stop-color="#9f603d"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#sky3)"/>
+  <circle cx="170" cy="120" r="52" fill="#ffd870"/>
+  <rect y="470" width="960" height="130" fill="#ffd7a0"/>
+  <path d="M120 470 L370 170 L620 470Z" fill="url(#mountain1)"/>
+  <path d="M300 470 L520 210 L760 470Z" fill="#b46f45"/>
+  <path d="M395 420 Q430 350 480 412 Q455 452 400 452Z" fill="#2e2f34"/>
+  <g fill="#f3cc66">
+    <polygon points="620,118 630,138 650,146 630,154 620,174 610,154 590,146 610,138"/>
+    <polygon points="700,155 708,170 724,177 708,184 700,199 692,184 676,177 692,170"/>
+    <polygon points="780,128 788,143 804,150 788,157 780,172 772,157 756,150 772,143"/>
+  </g>
+  <g fill="#70c99f">
+    <circle cx="110" cy="488" r="22"/>
+    <circle cx="152" cy="500" r="16"/>
+    <circle cx="846" cy="492" r="24"/>
+    <circle cx="892" cy="500" r="17"/>
+  </g>
+</svg>

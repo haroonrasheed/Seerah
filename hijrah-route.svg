@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Hijrah Route Clipart</title>
+  <desc id="desc">Playful route map clipart showing migration from Makkah to Madinah.</desc>
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d8f4ff"/>
+      <stop offset="100%" stop-color="#fff4cd"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#bg4)"/>
+  <rect x="80" y="80" width="800" height="440" rx="30" fill="#ffffff" stroke="#c2dcef" stroke-width="4"/>
+  <path d="M190 390 C 280 290, 350 320, 430 250 C 510 182, 640 182, 730 120"
+        fill="none" stroke="#2b7cd9" stroke-width="11" stroke-linecap="round" stroke-dasharray="2 22"/>
+  <circle cx="190" cy="390" r="30" fill="#ff8e4a"/>
+  <circle cx="730" cy="120" r="30" fill="#2aa77d"/>
+  <path d="M190 376 L202 398 L178 398Z" fill="#fff"/>
+  <path d="M730 106 L742 128 L718 128Z" fill="#fff"/>
+  <g transform="translate(300 312)">
+    <ellipse cx="140" cy="94" rx="150" ry="44" fill="#f4e1b7"/>
+    <path d="M60 84 Q90 40 128 44 Q164 45 182 78 Q199 74 214 82 Q226 91 224 103 Q221 120 202 125 H85 Q66 125 56 114 Q47 102 60 84Z" fill="#ca9058"/>
+    <circle cx="194" cy="72" r="12" fill="#ca9058"/>
+    <circle cx="199" cy="70" r="3" fill="#2f2f2f"/>
+    <rect x="102" y="46" width="40" height="22" rx="6" fill="#f2bf56"/>
+    <rect x="114" y="30" width="16" height="20" rx="5" fill="#f2bf56"/>
+  </g>
+  <g fill="#7ac9e6" opacity="0.9">
+    <circle cx="226" cy="182" r="10"/>
+    <circle cx="260" cy="160" r="8"/>
+    <circle cx="292" cy="144" r="7"/>
+  </g>
+</svg>

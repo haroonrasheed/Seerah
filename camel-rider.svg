@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Camel Rider Clipart</title>
+  <desc id="desc">Friendly desert camel and rider clipart for educational timeline decoration.</desc>
+  <defs>
+    <linearGradient id="bgCamel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dff3ff"/>
+      <stop offset="100%" stop-color="#ffe6c2"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#bgCamel)"/>
+  <path d="M0 420 C 180 360, 340 450, 560 412 C 700 384, 840 440, 960 410 L960 600 L0 600Z" fill="#efbc84"/>
+  <g transform="translate(182 220)">
+    <ellipse cx="292" cy="284" rx="270" ry="56" fill="#d89c63" opacity="0.52"/>
+    <path d="M140 246 Q 160 168 220 170 Q 246 130 296 148 Q 344 94 404 144 Q 456 132 494 172 Q 562 176 576 236 Q 586 270 548 286 L220 286 Q 180 284 160 272 Q 142 266 140 246Z" fill="#bf7d4f"/>
+    <rect x="230" y="284" width="26" height="90" rx="12" fill="#945d39"/>
+    <rect x="292" y="284" width="26" height="90" rx="12" fill="#945d39"/>
+    <rect x="408" y="284" width="26" height="90" rx="12" fill="#945d39"/>
+    <rect x="470" y="284" width="26" height="90" rx="12" fill="#945d39"/>
+    <path d="M558 220 Q 640 184 670 220 Q 690 238 664 262 Q 648 276 614 266 Q 598 260 588 250" fill="none" stroke="#945d39" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="648" cy="228" r="12" fill="#f2c38f"/>
+    <circle cx="651" cy="226" r="3" fill="#2d2320"/>
+    <rect x="300" y="182" width="138" height="38" rx="10" fill="#5b75a7"/>
+    <rect x="312" y="194" width="114" height="24" rx="8" fill="#7f96c2"/>
+    <g transform="translate(332 126)">
+      <circle cx="34" cy="24" r="18" fill="#f2c08d"/>
+      <rect x="14" y="40" width="40" height="54" rx="14" fill="#f7efe1"/>
+      <rect x="8" y="42" width="52" height="20" rx="10" fill="#dad0be"/>
+      <rect x="20" y="86" width="12" height="42" rx="6" fill="#f7efe1"/>
+      <rect x="36" y="86" width="12" height="42" rx="6" fill="#f7efe1"/>
+    </g>
+  </g>
+</svg>
