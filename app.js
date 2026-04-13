@@ -998,7 +998,7 @@ const PHASE_CLIPARTS = {
 };
 
 const DEFAULT_CLIPART = "./default-seerah.svg";
-const JOURNEY_GUIDE_ICON = "./journey-guide-character.png";
+const JOURNEY_GUIDE_ICON = "./journey-guide-character.gif";
 
 const PHASE_LABELS_UR = {
   early: "ابتدائی زندگی",
@@ -1011,8 +1011,9 @@ const PHASE_LABELS_UR = {
 
 const UI_TEXT = {
   en: {
-    heroEyebrow: "Seerah Project Timeline",
-    heroTitle: "Life Timeline of Prophet Muhammad (SAWW)",
+    heroEyebrow: "",
+    heroTitle: "Life of Prophet Muhammad (SAWW)",
+    heroSubtitle: "From darkness to light, the Prophet (ﷺ) came to guide people to what is right",
     noticeHowTo: "<strong>How to use:</strong> click any numbered point to open full event details.",
     noticeDate: "<strong>Date note:</strong> some early dates are approximate across historical sources.",
     noticeVisual: "<strong>Visual note:</strong> this project uses places/maps only, not personal depictions.",
@@ -1076,8 +1077,9 @@ const UI_TEXT = {
     prophetOpenAria: "Open prophet details"
   },
   ur: {
-    heroEyebrow: "سیرت پراجیکٹ ٹائم لائن",
-    heroTitle: "حیاتِ رسول محمد ﷺ کی ٹائم لائن",
+    heroEyebrow: "",
+    heroTitle: "حیاتِ رسول محمد ﷺ",
+    heroSubtitle: "اندھیروں سے روشنی تک، نبی کریم ﷺ لوگوں کو سیدھی اور درست راہ دکھانے کے لیے تشریف لائے۔",
     noticeHowTo: "<strong>طریقہ استعمال:</strong> کسی بھی نمبر والے پوائنٹ پر کلک کریں اور مکمل تفصیل پڑھیں۔",
     noticeDate: "<strong>تاریخی نوٹ:</strong> ابتدائی دور کی بعض تاریخیں مختلف تاریخی مآخذ میں اندازاً بیان ہوتی ہیں۔",
     noticeVisual: "<strong>بصری نوٹ:</strong> اس پراجیکٹ میں صرف مقامات اور نقشہ شامل ہیں، شخصی تصاویر نہیں۔",
@@ -1554,6 +1556,7 @@ const viewTabsEl = document.getElementById("viewTabs");
 
 const heroEyebrowEl = document.getElementById("heroEyebrow");
 const heroTitleEl = document.getElementById("heroTitle");
+const heroSubtitleEl = document.getElementById("heroSubtitle");
 const noticeHowToEl = document.getElementById("noticeHowTo");
 const noticeDateEl = document.getElementById("noticeDate");
 const noticeVisualEl = document.getElementById("noticeVisual");
@@ -3064,6 +3067,7 @@ function applyLanguage(isInitial = false) {
   };
   heroEyebrowEl.textContent = ui.heroEyebrow;
   heroTitleEl.textContent = ui.heroTitle;
+  heroSubtitleEl.textContent = ui.heroSubtitle;
   noticeHowToEl.innerHTML = ui.noticeHowTo;
   noticeDateEl.innerHTML = ui.noticeDate;
   noticeVisualEl.innerHTML = ui.noticeVisual;
@@ -3257,6 +3261,7 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
+
 
 
 
